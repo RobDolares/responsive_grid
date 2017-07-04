@@ -12,36 +12,77 @@
 */
 
 /*** Default Mobile Styles ****************************/
+
+
+
 body{
     font-family: Lucida Sans Typewriter, Lucida Console, monaco, monospace;
     font-size: 0.9em;
     line-height: 1.4;
+    margin: 0 auto;
 }
 h1{
     text-align: center;
     text-transform: uppercase;
 }
+ul {
+  display: flex;
+  flex-flow: wrap;
+  margin: 0 auto;
+  padding: 0;
+}
 
+li {
+  list-style: none;
+  background-color: #bff;
+  padding: 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 5px;
+  flex: 0 100%;
+}
 
+.inner li {
+  background-color: white;
+}
 
 
 
 /**** Tablet Styles ***********************************/
 
+@media screen and (min-width: 700px) {
+li {
+    background-color: #fcf;
+  }
 
+body>ul>li:nth-child(1),
+body>ul>li:nth-child(2),
+body>ul>li:nth-child(5),
+body>ul>li:nth-child(6){
+  flex: 1;
+}
 
-
-
-
-
+}
 
 /**** Desktop Styles ***********************************/
+@media screen and (min-width: 1000px) {
+  li {
+    background-color: #ff9;
+  }
 
+.inner {
+  order: -1;
+}
 
+.inner>ul {
+  display: flex;
+  flex-wrap: nowrap;
+}
 
-
-
-
-
-
-
+body>ul>li:nth-child(1),
+body>ul>li:nth-child(2),
+body>ul>li:nth-child(3),
+body>ul>li:nth-child(5),
+body>ul>li:nth-child(6){
+  flex:1 19%;}
+}
